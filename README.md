@@ -44,7 +44,12 @@ port detects and runs it (tested with 469e); the original 436 also works.
 1. Install the APK from the [Releases](../../releases) page (sideload with `adb install -r` or
    [SideQuest](https://sidequestvr.com/setup-howto); developer mode required). SideQuest is a
    Quest tool — on PICO, sideload with adb.
-2. Copy the game folders to `/sdcard/SurrealEngineUT/` on the headset so you have:
+2. **Easiest:** just launch the app. If no game files are found, a panel offers to download
+   the free original Unreal Tournament GOTY disc (620 MB) from OldUnreal's servers — the source
+   Epic Games approved — and installs UT 436 for you, maps unpacked (Wi-Fi needed, takes about
+   a minute or two). The download is checked against OldUnreal's published SHA-256.
+
+   **Or by hand:** copy the game folders to `/sdcard/SurrealEngineUT/` on the headset so you have:
 
        /sdcard/SurrealEngineUT/System   Maps   Textures   Sounds   Music   Help
 

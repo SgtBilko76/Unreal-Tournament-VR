@@ -40,8 +40,17 @@ working. Remove `/sdcard/SurrealEngine/.bundled-game-version` to force a re-extr
 4. `adb install -r` the APK; on first start the Quest asks for "All files access" (needed for
    `/sdcard/SurrealEngine`), then the extraction runs.
 
-Without an `assets-game` folder the build still works and behaves like the old sideload-only
-APK.
+Without `assets-game/game` (only `SurrealEngine.pk3` staged - this is the public release
+build) the APK copies the pk3 to the game directory and, if no game files are there, opens
+`GameSetupActivity`: a regular 2D panel (immersive activities can't show Android views on the
+headset) that offers to download the original game disc image (Unreal Gold, or UT GOTY CD1 for
+the ut99 flavor) from OldUnreal's servers
+(archive.org as fallback; URLs, size and SHA-256 as in OldUnreal's own installer,
+github.com/OldUnreal/FullGameInstallers, configured per flavor in `build.gradle`). After
+checking the hash, `GameIsoInstaller` copies the disc's files into the game directory (Unreal
+226b / UT 436; English text only, no default `Unreal.ini`/`UnrealTournament.ini`/`User.ini`),
+unpacks UT's compressed `Maps/*.unr.uz` with `UzDecoder`, deletes the image and starts the
+game. The download resumes after an interruption.
 
 ## Licensing
 
