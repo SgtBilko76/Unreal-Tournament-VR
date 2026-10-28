@@ -61,6 +61,8 @@ port detects and runs it (tested with 469e); the original 436 also works.
 
 ## Controls
 
+![Unreal Tournament VR controller mapping](docs/controls.webp)
+
 | Input | Action |
 | --- | --- |
 | Left stick | Move (direction follows snap-turns) |
